@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Прављење налога</title>
+</head>
+
+<body>
+    <h1>Прављење налога</h1>
+
+    <% if (typeof errors !='undefined' ) { %>
+        <% errors.forEach(err=> { %>
+            <header>
+                <%= err %>
+            </header>
+        <% }) %>
+    <% } %>
+
+    <form action="/register" method="POST">
+        <div>
+            <label for="username">Корисничко име:</label>
+            <input type="text" id="username" name="username"
+                value="<%= typeof username != 'undefined' ? username : '' %>" required>
+        </div>
+        <div>
+            <label for="password">Шифра:</label>
+            <input type="password" id="password" name="password"
+                value="<%= typeof password != 'undefined' ? password : '' %>" required>
+        </div>
+        <div>
+            <label for="password2">Потврди шифру:</label>
+            <input type="password" id="password2" name="password2"
+                value="<%= typeof password2 != 'undefined' ? password2 : '' %>"" required>
+        </div>
+        <button type=" submit">Проследи</button>
+    </form>
+
+    <a href="/login">Уколико већ имаш налог, пријави се овде.</a>
+</body>
+
+</html>

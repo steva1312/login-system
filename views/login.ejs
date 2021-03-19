@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пријава</title>
+</head>
+
+<body>
+    <h1>Пријава на налог</h1>
+
+    <% if (success_msg != '') { %>
+        <header>
+            <%= success_msg %>
+        </header>
+    <% } %>
+
+    <% if (login_error != '') { %>
+        <header>
+            <%= login_error %>
+        </header>
+    <% } %>
+
+    <form action="/login" method="POST">
+        <div>
+            <label for="username">Корисничко име:</label>
+            <input type="text" id="username" name="username" required>
+        </div>
+        <div>
+            <label for="password">Шифра:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <button type=" submit">Проследи</button>
+    </form>
+
+    <a href="/register">Уколико немаш направљен налог, направи га овде.</a>
+</body>
+
+</html>
